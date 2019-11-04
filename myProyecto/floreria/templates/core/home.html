@@ -7,10 +7,13 @@
     {% load static %}    
 
     {% block contenido %}
-        <div class="central">
-        
-                     <h2>Bienvenidos!</h2>
-            <img src="{% static 'core/img/rosa.jpg' %}" width="20%" alt="foto logo">
+        <div class="container" style="background-color: #c1b4f0;">
+            <div class="jumbotron" style="background-color: #c1b4f0;">
+                    <h3>Flores Floreria</h3>
+                    <p>Regala cariño con flores</p>
+            </div>
+            
         </div>
+        <img src="{% static 'core/img/Rosas.jpg' %}" class="img-fluid" alt="Responsive image">
     {% endblock contenido %}
        
