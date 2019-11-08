@@ -45,7 +45,7 @@ Galeria - Floreria
                         <h3 class="text-center my-3">Photo title</h3>
                     </a>
 
-                    <p >
+                    <p>
                         Descripcion:
                         <hr>
                         Stock:
@@ -58,7 +58,6 @@ Galeria - Floreria
                             class="rounded-lg" />
                         <h3 class="text-center my-3">Photo title</h3>
                     </a>
-
                     <p>
                         Descripcion:
                         <hr>
@@ -72,7 +71,6 @@ Galeria - Floreria
                             class="rounded-lg" />
                         <h3 class="text-center my-3">Photo title</h3>
                     </a>
-
                     <p>
                         Descripcion:
                         <hr>
@@ -80,75 +78,19 @@ Galeria - Floreria
                     </p>
                 </figure>
 
+                {% for f in listaFlores %}
                 <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/sin-imagen.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/sin-imagen.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
+                    <a class="black-text" href="{% static 'core/img/flores_8.jpg' %}" data-size="1600x1067">
+                        <img alt="picture" src="{{ f.imagen.url }}" width="367" height="250" class="rounded-lg" />
+                        <h3 class="text-center my-3">{{f.name}}</h3>
                     </a>
-
                     <p>
                         Descripcion:
                         <hr>
                         Stock:
                     </p>
                 </figure>
-
-                <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/sin-imagen.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/sin-imagen.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
-                    </a>
-
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
-                </figure>
-
-                <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/sin-imagen.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/sin-imagen.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
-                    </a>
-
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
-                </figure>
-
-                <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/sin-imagen.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/sin-imagen.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
-                    </a>
-
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
-                </figure>
-
-                <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/sin-imagen.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/sin-imagen.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
-                    </a>
-
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
-                </figure>
+                {% endfor %}
 
             </div>
 
