@@ -13,6 +13,9 @@ Galeria - Floreria
         <p><em>Regala cariño, con Florería Pétalos</em></p>
     </div>
 </div>
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -21,74 +24,27 @@ Galeria - Floreria
 
             <div class="mdb-lightbox no-margin">
 
-                <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/ramo_5.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/ramo_5.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
-
-                    </a>
-
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
-
-
-                </figure>
-
-                <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/ramo_6.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/ramo_6.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
-                    </a>
-
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
-                </figure>
-
-                <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/flores_7.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/flores_7.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
-                    </a>
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
-                </figure>
-
-                <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/flores_8.jpg' %}" data-size="1600x1067">
-                        <img alt="picture" src="{% static 'core/img/flores_8.jpg' %}" width="367" height="250"
-                            class="rounded-lg" />
-                        <h3 class="text-center my-3">Photo title</h3>
-                    </a>
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
-                </figure>
-
                 {% for f in listaFlores %}
                 <figure class="figure">
-                    <a class="black-text" href="{% static 'core/img/flores_8.jpg' %}" data-size="1600x1067">
+                    <a class="black-text" href="{{ f.imagen.url }}" data-size="1600x1067">
                         <img alt="picture" src="{{ f.imagen.url }}" width="367" height="250" class="rounded-lg" />
                         <h3 class="text-center my-3">{{f.name}}</h3>
                     </a>
-                    <p>
-                        Descripcion:
-                        <hr>
-                        Stock:
-                    </p>
+                    {% if f.estado == "D" %}
+
+                    <div class="alert alert-success" role="alert">
+                        Producto Disponible
+                    </div>
+
+                    {% endif %}
+
+                    {% if f.estado == "N" %}
+
+                    <div class="alert alert-danger" role="alert">
+                        Producto no Disponible
+                    </div>
+
+                    {% endif %}
                 </figure>
                 {% endfor %}
 
