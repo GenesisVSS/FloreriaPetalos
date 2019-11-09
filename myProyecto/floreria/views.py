@@ -29,3 +29,4 @@ def formulario(request):
         flor.save() #graba el objeto e bdd
         return render(request,'core/formulario.html',{'lista':florr,'msg':'grabo','sw':True})
     return render(request,'core/formulario.html',{'lista':florr})#pasan los datos a la web
+
