@@ -81,21 +81,27 @@ Galeria - Floreria
 
                             </div>
                             <div class="modal-footer">
-                                
                                
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <div>
+                                    <a href="{% url 'eliminar' f.name %}" type="button"  class="btn btn-primary">Eliminar</a>
+                                </div>
+                                
 
                             </div>
-                        </div>
 
+
+                        </div>
                     </div>
 
                 </div>
 
-                {% endfor %}
             </div>
+
+            {% endfor %}
         </div>
     </div>
+</div>
 </div>
 
 {% endblock contenido %}
