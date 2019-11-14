@@ -20,16 +20,16 @@ Galeria - Floreria
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="validationCustom01">Nombre Flor</label>
-                <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre" required>
+                <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre" minlength="3" maxlength="100" required>
                 <div class="invalid-feedback">
                     Por favor ingrese un nombre.
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom02">Valor</label>
-                <input type="number" class="form-control" id="txtValor" name="txtValor" placeholder="Valor" required>
+                <input type="number" class="form-control" id="txtValor" name="txtValor" placeholder="Valor" min="100" max="1000000" required>
                 <div class="invalid-feedback">
-                    Por favor ingrese un valor.
+                    Por favor ingrese un valor valido.
                 </div>
             </div>
 
@@ -37,14 +37,14 @@ Galeria - Floreria
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="validationCustom03">Estado</label>
-                <input type="text" class="form-control" id="txtEstado" name="txtEstado" placeholder="D-N" required>
+                <input type="text" class="form-control" id="txtEstado" name="txtEstado" placeholder="D-N" minlength="1" maxlength="1" pattern="N|D|n|d" required>
                 <div class="invalid-feedback">
                     Por favor indique disponible(D)-noDisponible(N).
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom04">Stock</label>
-                <input type="number" class="form-control" id="txtStock" name="txtStock" placeholder="Stock" required>
+                <input type="number" class="form-control" id="txtStock" name="txtStock" placeholder="Stock" min="0" required>
                 <div class="invalid-feedback">
                     Por favor ingrese el stock del producto.
                 </div>
@@ -61,10 +61,12 @@ Galeria - Floreria
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom02">Descripcion</label>
-                <input type="text" class="form-control" id="txtDesc"name="txtDesc" placeholder="Descripcion" required>
+                <input type="text" class="form-control" id="txtDesc"name="txtDesc" placeholder="Descripcion" minlength="4" maxlength="100" required>
                 <div class="invalid-feedback">
                     Por favor ingrese una descripcion.
+
                 </div>
+                
             </div>
         </div>
 

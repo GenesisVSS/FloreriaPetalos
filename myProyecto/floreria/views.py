@@ -6,13 +6,15 @@ from django.contrib.auth import authenticate,logout,login as auth_login
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required(login_url='/principal_login/')
+@login_required(login_url='/login/')
 def home(request):
     return render(request,'core/home.html')
 
+@login_required(login_url='/login/')
 def galeria(request):
     flores=Flores.objects.all()
     return render(request,'core/galeria.html',{'listaFlores':flores})
+
 def formulario(request):
     florr=Flores.objects.all()
     if request.POST:
@@ -37,11 +39,7 @@ def formulario(request):
 def eliminar_flor(request,id): 
     flor=Flores.objects.get(name=id)
     flor.delete()
-        
     return HttpResponse("<script> ;window.location.href='/galeria/';</script>")
-
-def principal_login(request):
-    return render(request,'core/principal_login.html')
 
 def login_inicio(request):
     if request.POST:
@@ -51,13 +49,10 @@ def login_inicio(request):
         if usu is not None and usu.is_active:
             auth_login(request, usu)
             return render(request,'core/home.html')
-    return render(request,'core/principal_login.html')
+    return render(request,'core/login.html')
 
-def login_admin(request):
-    return render(request,'core/login_admin.html')
-
-def login_usuario(request):
-    return render(request,'core/login_usuario.html')
+def login(request):
+    return render(request,'core/login.html')
 
 def cerrar_sesion(request):
     logout(request)
