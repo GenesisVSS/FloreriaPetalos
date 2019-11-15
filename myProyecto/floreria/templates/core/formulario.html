@@ -1,9 +1,11 @@
-{% extends "core/base.html" %}
+ <!--SE TOMA UNA BASE Y SE EXTIENDE A LA PAGINA ACTUAL-->
+{% extends "core/base_admin.html" %}
 
 {% block titulo %}
-Galeria - Floreria
+Formulario - Floreria
 {% endblock titulo %}
 
+ <!--SE CARGAN LOS ARCHIVOS ESTATICOS A LA PAGINA ACTUAL-->
 {% load static %}
 {% block contenido %}
 
@@ -14,12 +16,14 @@ Galeria - Floreria
     </div>
 </div>
 
+<!--FORMULARIO PARA EL INGRESO DE NUEVAS FLORES A LA WEB-->
 <div class="container">
     <form class="needs-validation" id="formulario" action="" method="POST" enctype="multipart/form-data" novalidate >
         {% csrf_token %}
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="validationCustom01">Nombre Flor</label>
+                 <!--SE LES CARGA UN MINIMO DE CARACTERES QUE DEBE TENER EL NOMBRE Y UN MAXIMO-->
                 <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre" minlength="3" maxlength="100" required>
                 <div class="invalid-feedback">
                     Por favor ingrese un nombre.
@@ -27,6 +31,7 @@ Galeria - Floreria
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom02">Valor</label>
+                 <!--SE LES CARGA UN MINIMO EN EL VALOR QUE DEBE TENER UNA FLOR Y UN MAXIMO-->
                 <input type="number" class="form-control" id="txtValor" name="txtValor" placeholder="Valor" min="100" max="1000000" required>
                 <div class="invalid-feedback">
                     Por favor ingrese un valor valido.
@@ -37,6 +42,7 @@ Galeria - Floreria
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="validationCustom03">Estado</label>
+                 <!--SE ESTABLECE EL PATRON DE CARACTERES PERMITIDOS,RESTRINGIENDO LA CANTIDAD Y LA LETRA INGRESADA EN EL CAMPO DE TEXTO,CONTANDO TAMBIEN CON UN MINIMO Y MAXIMO DE CARACTERES-->
                 <input type="text" class="form-control" id="txtEstado" name="txtEstado" placeholder="D-N" minlength="1" maxlength="1" pattern="N|D|n|d" required>
                 <div class="invalid-feedback">
                     Por favor indique disponible(D)-noDisponible(N).
@@ -44,6 +50,7 @@ Galeria - Floreria
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom04">Stock</label>
+                 <!--SE ESTABLECE UN MINIMO DE VALOR EN STOCK-->
                 <input type="number" class="form-control" id="txtStock" name="txtStock" placeholder="Stock" min="0" required>
                 <div class="invalid-feedback">
                     Por favor ingrese el stock del producto.
@@ -61,6 +68,7 @@ Galeria - Floreria
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom02">Descripcion</label>
+                 <!--SE LES CARGA UN MINIMO DE CARACTERES QUE DEBE TENER LA DESCRIPCION Y UN MAXIMO-->
                 <input type="text" class="form-control" id="txtDesc"name="txtDesc" placeholder="Descripcion" minlength="4" maxlength="100" required>
                 <div class="invalid-feedback">
                     Por favor ingrese una descripcion.
@@ -73,6 +81,7 @@ Galeria - Floreria
 
         <div class="form-group">
             <div class="form-check">
+                 <!--CHECKBOX QUE DECLARA ESTAR DE ACUERDO CON TERMINOS-->
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                 <label class="form-check-label" for="invalidCheck">
                     Estoy de acuerdo con los terminos y condiciones
@@ -86,14 +95,13 @@ Galeria - Floreria
         <hr>
     </form>
 
+     <!--METODO DE VALIDACION ATRAVEZ DE JAVASCRIPT-->
     <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
             'use strict';
             window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
                 var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
+                //LOOP PARA NO PODER ENVIAR LA INFORMACION HASTA QUE ESTA ESTÉ CORRECTA
                 var validation = Array.prototype.filter.call(forms, function (form) {
                     form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {

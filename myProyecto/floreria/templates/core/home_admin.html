@@ -1,21 +1,23 @@
-    {% extends "core/base.html" %}
+    <!--SE TOMA UNA BASE Y SE EXTIENDE A LA PAGINA ACTUAL-->
+    {% extends "core/base_admin.html" %}
 
     {% block titulo %}
         Main Principal - Floreria
     {% endblock titulo %}
-
+     <!--SE CARGAN LOS ARCHIVOS ESTATICOS A LA PAGINA ACTUAL-->
     {% load static %}    
 
     {% block contenido %}
+    <!--ENCABEZADO DE LA PAGINA-->
         <div class="container" >
             <div class="jumbotron" style="background-color: rgb(248, 227, 227);">
-                    <h3><em>Floreria Petalos</em></h3>
+                    <h3><em>Floreria Petalos-Administradores</em></h3>
                     <p><em>Regala cariño, con Florería Pétalos</em></p>
             </div>
             
         
         </div>
-        
+        <!--CAROUSEL PARA MOSTRAR LAS IMAGENES PRINCIPALES DE LA PAGINA-->
         <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
